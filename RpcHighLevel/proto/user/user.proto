@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package highlevel.user.v1;
+
+option go_package = "highlevel/proto/user/v1;userv1";
+
+// UserService provides methods to interact with user data
+service UserService {
+  // GetUser retrieves user information by user ID
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+// GetUserRequest is the request message for GetUser
+message GetUserRequest {
+  string user_id = 1;
+}
+
+// GetUserResponse is the response message for GetUser
+message GetUserResponse {
+  string user_id = 1;
+  string email_id = 2;
+  string name = 3;
+  string role = 4;
+}
